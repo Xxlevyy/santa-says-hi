@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Santa Says Hi | Online Store</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+    <!-- =========================
+         NAVIGATION
+         ========================= -->
+
+    <header class="navbar">
+
+        <a href="#" class="logo">
+            🎅 Santa Says Hi
+        </a>
+
+
+        <nav class="nav-links">
+
+            <a href="#home">Home</a>
+
+            <a href="#shop">Shop</a>
+
+            <a href="#categories">Categories</a>
+
+            <a href="#about">About</a>
+
+        </nav>
+
+
+        <button class="cart-button"
+                onclick="openCart()">
+
+            🛒 Cart
+
+            <span id="cart-count">0</span>
+
+        </button>
+
+    </header>
+
+
+
+    <!-- =========================
+         HERO
+         ========================= -->
+
+    <main>
+
+        <section id="home" class="hero">
+
+            <div class="hero-content">
+
+                <p class="eyebrow">
+                    WELCOME TO SANTA SAYS HI
+                </p>
+
+
+                <h1>
+                    Find something
+                    <br>
+                    you'll love.
+                </h1>
+
+
+                <p class="hero-description">
+                    Discover products for your everyday life,
+                    all in one place.
+                </p>
+
+
+                <a href="#shop"
+                   class="primary-button">
+
+                    Shop Now
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             CATEGORIES
+             ========================= -->
+
+        <section id="categories"
+                 class="categories-section">
+
+            <div class="section-heading">
+
+                <p class="eyebrow">
+                    EXPLORE
+                </p>
+
+                <h2>
+                    Shop by Category
+                </h2>
+
+            </div>
+
+
+            <div class="category-grid">
+
+                <button class="category-card"
+                        onclick="filterProducts('Shoes')">
+
+                    👟
+
+                    <span>Shoes</span>
+
+                </button>
+
+
+                <button class="category-card"
+                        onclick="filterProducts('Clothing')">
+
+                    👕 
+
+                    <span>Clothing</span>
+
+                </button>
+
+
+                <button class="category-card"
+                        onclick="filterProducts('Electronics')">
+
+                    🎧
+
+                    <span>Electronics</span>
+
+                </button>
+
+
+                <button class="category-card"
+                        onclick="filterProducts('All')">
+
+                    🛍️
+
+                    <span>All Products</span>
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             SHOP
+             ========================= -->
+
+        <section id="shop"
+                 class="shop-section">
+
+            <div class="shop-header">
+
+                <div>
+
+                    <p class="eyebrow">
+                        OUR COLLECTION
+                    </p>
+
+                    <h2>
+                        Featured Products
+                    </h2>
+
+                </div>
+
+
+                <input
+                    type="search"
+                    id="search-input"
+                    placeholder="Search products..."
+                >
+
+            </div>
+
+
+            <div id="product-grid"
+                 class="product-grid">
+
+                <!-- JavaScript will create
+                     the products here -->
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             ABOUT
+             ========================= -->
+
+        <section id="about"
+                 class="about-section">
+
+            <div class="about-content">
+
+                <p class="eyebrow">
+                    ABOUT US
+                </p>
+
+                <h2>
+                    Welcome to Santa Says Hi.
+                </h2>
+
+                <p>
+                    We're building a simple place where
+                    finding something you like doesn't have
+                    to feel complicated.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================
+         CART SIDEBAR
+         ========================= -->
+
+    <div id="cart-overlay"
+         class="cart-overlay"
+         onclick="closeCart()">
+    </div>
+
+
+    <aside id="cart-sidebar"
+           class="cart-sidebar">
+
+        <div class="cart-header">
+
+            <h2>
+                Your Cart
+            </h2>
+
+            <button onclick="closeCart()"
+                    class="close-cart">
+
+                ✕
+
+            </button>
+
+        </div>
+
+
+        <div id="cart-items"
+             class="cart-items">
+
+            <p class="empty-cart">
+                Your cart is empty.
+            </p>
+
+        </div>
+
+
+        <div class="cart-footer">
+
+            <div class="cart-total">
+
+                <span>
+                    Total
+                </span>
+
+                <strong>
+                    KSh <span id="cart-total">0</span>
+                </strong>
+
+            </div>
+
+
+            <button class="checkout-button"
+                    onclick="openCheckout()">
+
+                Proceed to Checkout
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =========================
+         CHECKOUT MODAL
+         ========================= -->
+
+    <div id="checkout-modal"
+         class="modal">
+
+        <div class="modal-content">
+
+            <button class="modal-close"
+                    onclick="closeCheckout()">
+
+                ✕
+
+            </button>
+
+
+            <p class="eyebrow">
+                CHECKOUT
+            </p>
+
+
+            <h2>
+                Complete Your Order
+            </h2>
+
+
+            <form id="checkout-form">
+
+                <label for="customer-name">
+                    Full Name
+                </label>
+
+                <input
+                    id="customer-name"
+                    type="text"
+                    placeholder="Your full name"
+                    required
+                >
+
+
+                <label for="customer-phone">
+                    Phone Number
+                </label>
+
+                <input
+                    id="customer-phone"
+                    type="tel"
+                    placeholder="07XXXXXXXX"
+                    required
+                >
+
+
+                <label for="customer-location">
+                    Delivery Location
+                </label>
+
+                <input
+                    id="customer-location"
+                    type="text"
+                    placeholder="Town / Area"
+                    required
+                >
+
+
+                <label for="payment-method">
+                    Payment Method
+                </label>
+
+                <select id="payment-method">
+
+                    <option value="M-Pesa">
+                        M-Pesa
+                    </option>
+
+                    <option value="Cash">
+                        Cash on Delivery
+                    </option>
+
+                </select>
+
+
+                <div class="checkout-summary">
+
+                    <span>
+                        Order Total
+                    </span>
+
+                    <strong>
+                        KSh
+                        <span id="checkout-total">
+                            0
+                        </span>
+                    </strong>
+
+                </div>
+
+
+                <button type="submit"
+                        class="primary-button checkout-submit">
+
+                    Place Order
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         ORDER SUCCESS
+         ========================= -->
+
+    <div id="success-modal"
+         class="modal">
+
+        <div class="modal-content success-content">
+
+            <div class="success-icon">
+                ✓
+            </div>
+
+
+            <h2>
+                Order Received! 🎉
+            </h2>
+
+
+            <p>
+                Thank you for shopping with
+                Santa Says Hi.
+            </p>
+
+
+            <p>
+                We'll contact you shortly to
+                confirm your order.
+            </p>
+
+
+            <button
+                class="primary-button"
+                onclick="closeSuccess()">
+
+                Continue Shopping
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- JavaScript -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

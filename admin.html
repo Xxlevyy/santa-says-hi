@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Santa Says Hi | Admin Dashboard</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        body {
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            background: #f5f6fa;
+
+            color: #222;
+
+        }
+
+
+        /* ==============================
+           HEADER
+        ============================== */
+
+        header {
+
+            background: #111;
+
+            color: white;
+
+            padding: 20px 30px;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            gap: 20px;
+
+        }
+
+
+        .header-left h1 {
+
+            font-size: 25px;
+
+            margin-bottom: 5px;
+
+        }
+
+
+        .header-left p {
+
+            color: #aaa;
+
+            font-size: 14px;
+
+        }
+
+
+        .back-shop {
+
+            color: white;
+
+            text-decoration: none;
+
+            padding: 10px 15px;
+
+            border: 1px solid #555;
+
+            border-radius: 7px;
+
+            transition: 0.2s;
+
+        }
+
+
+        .back-shop:hover {
+
+            background: white;
+
+            color: #111;
+
+        }
+
+
+        /* ==============================
+           MAIN CONTAINER
+        ============================== */
+
+        .container {
+
+            width: 94%;
+
+            max-width: 1450px;
+
+            margin: 30px auto;
+
+        }
+
+
+        /* ==============================
+           DASHBOARD CARDS
+        ============================== */
+
+        .dashboard-cards {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(200px, 1fr)
+                );
+
+            gap: 20px;
+
+            margin-bottom: 30px;
+
+        }
+
+
+        .card {
+
+            background: white;
+
+            padding: 25px;
+
+            border-radius: 12px;
+
+            box-shadow:
+                0 3px 12px
+                rgba(0, 0, 0, 0.08);
+
+        }
+
+
+        .card h3 {
+
+            color: #777;
+
+            font-size: 14px;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .card strong {
+
+            font-size: 30px;
+
+        }
+
+
+        .card small {
+
+            display: block;
+
+            margin-top: 8px;
+
+            color: #999;
+
+        }
+
+
+        .card-danger strong {
+
+            color: #dc3545;
+
+        }
+
+
+        .card-warning strong {
+
+            color: #f0ad4e;
+
+        }
+
+
+        .card-success strong {
+
+            color: #198754;
+
+        }
+
+
+        /* ==============================
+           SECTIONS
+        ============================== */
+
+        .section {
+
+            background: white;
+
+            padding: 25px;
+
+            border-radius: 12px;
+
+            margin-bottom: 30px;
+
+            box-shadow:
+                0 3px 12px
+                rgba(0, 0, 0, 0.08);
+
+        }
+
+
+        .section-header {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            gap: 15px;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .section-header h2 {
+
+            font-size: 21px;
+
+        }
+
+
+        /* ==============================
+           BUTTONS
+        ============================== */
+
+        button {
+
+            border: none;
+
+            padding: 10px 15px;
+
+            border-radius: 7px;
+
+            cursor: pointer;
+
+            font-weight: bold;
+
+            transition: 0.2s;
+
+        }
+
+
+        button:hover {
+
+            opacity: 0.85;
+
+        }
+
+
+        .primary {
+
+            background: #111;
+
+            color: white;
+
+        }
+
+
+        .success {
+
+            background: #198754;
+
+            color: white;
+
+        }
+
+
+        .warning {
+
+            background: #f0ad4e;
+
+            color: white;
+
+        }
+
+
+        .danger {
+
+            background: #dc3545;
+
+            color: white;
+
+        }
+
+
+        .secondary {
+
+            background: #ddd;
+
+            color: #222;
+
+        }
+
+
+        /* ==============================
+           FORM
+        ============================== */
+
+        .product-form {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(180px, 1fr)
+                );
+
+            gap: 15px;
+
+        }
+
+
+        input,
+        select,
+        textarea {
+
+            width: 100%;
+
+            padding: 12px;
+
+            border: 1px solid #ddd;
+
+            border-radius: 7px;
+
+            font-size: 14px;
+
+            font-family: inherit;
+
+        }
+
+
+        textarea {
+
+            min-height: 100px;
+
+            resize: vertical;
+
+        }
+
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+
+            outline: none;
+
+            border-color: #111;
+
+        }
+
+
+        .full-width {
+
+            grid-column: 1 / -1;
+
+        }
+
+
+        .form-buttons {
+
+            grid-column: 1 / -1;
+
+            display: flex;
+
+            gap: 10px;
+
+        }
+
+
+        /* ==============================
+           TABLE
+        ============================== */
+
+        .table-wrapper {
+
+            overflow-x: auto;
+
+        }
+
+
+        table {
+
+            width: 100%;
+
+            border-collapse: collapse;
+
+            min-width: 950px;
+
+        }
+
+
+        th,
+        td {
+
+            padding: 14px;
+
+            text-align: left;
+
+            border-bottom: 1px solid #eee;
+
+            vertical-align: middle;
+
+        }
+
+
+        th {
+
+            background: #f8f8f8;
+
+            font-size: 13px;
+
+        }
+
+
+        td {
+
+            font-size: 14px;
+
+        }
+
+
+        /* ==============================
+           PRODUCT IMAGE
+        ============================== */
+
+        .product-image {
+
+            width: 55px;
+
+            height: 55px;
+
+            object-fit: cover;
+
+            border-radius: 8px;
+
+            background: #eee;
+
+        }
+
+
+        /* ==============================
+           STOCK STATUS
+        ============================== */
+
+        .stock-good {
+
+            color: #198754;
+
+            font-weight: bold;
+
+        }
+
+
+        .stock-low {
+
+            color: #f0ad4e;
+
+            font-weight: bold;
+
+        }
+
+
+        .stock-out {
+
+            color: #dc3545;
+
+            font-weight: bold;
+
+        }
+
+
+        /* ==============================
+           STOCK CONTROLS
+        ============================== */
+
+        .stock-controls {
+
+            display: flex;
+
+            gap: 5px;
+
+            align-items: center;
+
+        }
+
+
+        .stock-controls input {
+
+            width: 70px;
+
+        }
+
+
+        .stock-controls button {
+
+            min-width: 38px;
+
+            padding: 9px;
+
+        }
+
+
+        /* ==============================
+           ACTIONS
+        ============================== */
+
+        .actions {
+
+            display: flex;
+
+            gap: 6px;
+
+            flex-wrap: wrap;
+
+        }
+
+
+        /* ==============================
+           ORDER STATUS
+        ============================== */
+
+        .order-status {
+
+            min-width: 130px;
+
+            padding: 8px;
+
+        }
+
+
+        /* ==============================
+           EMPTY / LOADING
+        ============================== */
+
+        .message {
+
+            text-align: center;
+
+            padding: 30px;
+
+            color: #777;
+
+        }
+
+
+        /* ==============================
+           MOBILE
+        ============================== */
+
+        @media (max-width: 700px) {
+
+            header {
+
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                padding: 18px;
+
+            }
+
+
+            .container {
+
+                width: 92%;
+
+            }
+
+
+            .section {
+
+                padding: 18px;
+
+            }
+
+
+            .section-header {
+
+                flex-direction: column;
+
+                align-items: flex-start;
+
+            }
+
+
+            .form-buttons {
+
+                flex-direction: column;
+
+            }
+
+
+            .dashboard-cards {
+
+                grid-template-columns: 1fr 1fr;
+
+            }
+
+        }
+
+
+        @media (max-width: 450px) {
+
+            .dashboard-cards {
+
+                grid-template-columns: 1fr;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ==========================================
+     HEADER
+========================================== -->
+
+<header>
+
+    <div class="header-left">
+
+        <h1>
+            🎅 Santa Says Hi
+        </h1>
+
+        <p>
+            Admin Dashboard
+        </p>
+
+    </div>
+
+
+    <a
+        href="index.html"
+        class="back-shop"
+    >
+        ← Back to Shop
+    </a>
+
+</header>
+
+
+<main class="container">
+
+
+    <!-- ======================================
+         DASHBOARD STATISTICS
+    ======================================= -->
+
+    <div class="dashboard-cards">
+
+
+        <div class="card">
+
+            <h3>
+                Total Products
+            </h3>
+
+            <strong id="total-products">
+                0
+            </strong>
+
+            <small>
+                Products in store
+            </small>
+
+        </div>
+
+
+        <div class="card card-success">
+
+            <h3>
+                Total Stock
+            </h3>
+
+            <strong id="total-stock">
+                0
+            </strong>
+
+            <small>
+                Items available
+            </small>
+
+        </div>
+
+
+        <div class="card card-warning">
+
+            <h3>
+                Low Stock
+            </h3>
+
+            <strong id="low-stock">
+                0
+            </strong>
+
+            <small>
+                Need attention
+            </small>
+
+        </div>
+
+
+        <div class="card card-danger">
+
+            <h3>
+                Out of Stock
+            </h3>
+
+            <strong id="out-of-stock">
+                0
+            </strong>
+
+            <small>
+                Currently unavailable
+            </small>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                Total Orders
+            </h3>
+
+            <strong id="total-orders">
+                0
+            </strong>
+
+            <small>
+                All orders
+            </small>
+
+        </div>
+
+
+        <div class="card card-warning">
+
+            <h3>
+                Pending Orders
+            </h3>
+
+            <strong id="pending-orders">
+                0
+            </strong>
+
+            <small>
+                Need processing
+            </small>
+
+        </div>
+
+
+        <div class="card card-success">
+
+            <h3>
+                Revenue
+            </h3>
+
+            <strong id="total-revenue">
+                KSh 0
+            </strong>
+
+            <small>
+                Excluding cancelled orders
+            </small>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- ======================================
+         PRODUCT MANAGEMENT
+    ======================================= -->
+
+    <section class="section">
+
+
+        <div class="section-header">
+
+            <h2>
+                📦 Product & Stock Management
+            </h2>
+
+
+            <button
+                class="primary"
+                onclick="loadProducts()"
+            >
+                🔄 Refresh Products
+            </button>
+
+        </div>
+
+
+        <!-- PRODUCT FORM -->
+
+        <form
+            id="product-form"
+            class="product-form"
+        >
+
+
+            <input
+                type="hidden"
+                id="product-id"
+            >
+
+
+            <input
+                type="text"
+                id="product-name"
+                placeholder="Product name"
+                required
+            >
+
+
+            <select
+                id="product-category"
+                required
+            >
+
+                <option value="">
+                    Select category
+                </option>
+
+                <option value="Shoes">
+                    Shoes
+                </option>
+
+                <option value="Clothing">
+                    Clothing
+                </option>
+
+                <option value="Electronics">
+                    Electronics
+                </option>
+
+                <option value="Accessories">
+                    Accessories
+                </option>
+
+                <option value="Other">
+                    Other
+                </option>
+
+            </select>
+
+
+            <input
+                type="number"
+                id="product-price"
+                placeholder="Price"
+                min="0"
+                step="0.01"
+                required
+            >
+
+
+            <input
+                type="number"
+                id="product-stock"
+                placeholder="Stock quantity"
+                min="0"
+                required
+            >
+
+
+            <input
+                type="number"
+                id="product-threshold"
+                placeholder="Low-stock threshold"
+                min="1"
+                value="5"
+                required
+            >
+
+
+            <input
+                type="text"
+                id="product-image"
+                placeholder="Image path e.g. images/shoes.jpg"
+            >
+
+
+            <textarea
+                id="product-description"
+                class="full-width"
+                placeholder="Product description"
+            ></textarea>
+
+
+            <div class="form-buttons">
+
+
+                <button
+                    type="submit"
+                    class="success"
+                    id="save-product-button"
+                >
+                    ➕ Add Product
+                </button>
+
+
+                <button
+                    type="button"
+                    class="secondary"
+                    onclick="resetForm()"
+                >
+                    Clear
+                </button>
+
+
+            </div>
+
+
+        </form>
+
+
+    </section>
+
+
+    <!-- ======================================
+         PRODUCTS TABLE
+    ======================================= -->
+
+    <section class="section">
+
+
+        <div class="section-header">
+
+            <h2>
+                🏷️ Products
+            </h2>
+
+        </div>
+
+
+        <div class="table-wrapper">
+
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Image
+                        </th>
+
+                        <th>
+                            Product
+                        </th>
+
+                        <th>
+                            Category
+                        </th>
+
+                        <th>
+                            Price
+                        </th>
+
+                        <th>
+                            Stock
+                        </th>
+
+                        <th>
+                            Status
+                        </th>
+
+                        <th>
+                            Stock Control
+                        </th>
+
+                        <th>
+                            Actions
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="products-table">
+
+                    <tr>
+
+                        <td
+                            colspan="8"
+                            class="message"
+                        >
+                            Loading products...
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+
+            </table>
+
+
+        </div>
+
+
+    </section>
+
+
+    <!-- ======================================
+         ORDER MANAGEMENT
+    ======================================= -->
+
+    <section class="section">
+
+
+        <div class="section-header">
+
+            <h2>
+                🛒 Order Management
+            </h2>
+
+
+            <button
+                class="primary"
+                onclick="loadOrders()"
+            >
+                🔄 Refresh Orders
+            </button>
+
+        </div>
+
+
+        <div class="table-wrapper">
+
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Order ID
+                        </th>
+
+                        <th>
+                            Customer
+                        </th>
+
+                        <th>
+                            Phone
+                        </th>
+
+                        <th>
+                            Location
+                        </th>
+
+                        <th>
+                            Payment
+                        </th>
+
+                        <th>
+                            Total
+                        </th>
+
+                        <th>
+                            Status
+                        </th>
+                        <th>
+                            Items
+                        </th>
+
+                        <th>
+                            Date
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="orders-table">
+
+                    <tr>
+
+                        <td
+                            colspan="8"
+                            class="message"
+                        >
+                            Loading orders...
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+
+            </table>
+
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+<!-- ==========================================
+     JAVASCRIPT
+========================================== -->
+
+<script src="admin.js?v=3"></script>
+
+
+</body>
+
+</html>

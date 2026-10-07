@@ -1,0 +1,1940 @@
+/* =========================================
+   SANTA SAYS HI
+   MAIN STYLESHEET
+   ========================================= */
+
+
+/* ---------- RESET ---------- */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f7f7;
+    color: #171717;
+    line-height: 1.6;
+}
+
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+
+/* ---------- NAVIGATION ---------- */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 18px 6%;
+
+    background: #111;
+    color: white;
+}
+
+
+.logo {
+    color: white;
+    text-decoration: none;
+
+    font-size: 21px;
+    font-weight: 700;
+}
+
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+}
+
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+
+.nav-links a:hover {
+    opacity: 0.65;
+}
+
+
+.cart-button {
+    border: none;
+    background: white;
+    color: #111;
+
+    padding: 10px 16px;
+    border-radius: 7px;
+
+    cursor: pointer;
+    font-weight: 600;
+}
+
+
+#cart-count {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 21px;
+    height: 21px;
+
+    margin-left: 5px;
+
+    border-radius: 50%;
+
+    background: #e63946;
+    color: white;
+
+    font-size: 12px;
+}
+
+
+/* ---------- HERO ---------- */
+
+.hero {
+    min-height: 570px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            rgba(255,255,255,0.82),
+            rgba(255,255,255,0.82)
+        ),
+        #e9e9e9;
+}
+
+
+.hero-content {
+    max-width: 800px;
+    padding: 40px 20px;
+}
+
+
+.eyebrow {
+    margin-bottom: 15px;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    color: #777;
+}
+
+
+.hero h1 {
+    margin-bottom: 25px;
+
+    font-size: clamp(48px, 8vw, 82px);
+    line-height: 0.98;
+    letter-spacing: -3px;
+}
+
+
+.hero-description {
+    max-width: 500px;
+
+    margin: 0 auto 32px;
+
+    color: #666;
+    font-size: 18px;
+}
+
+
+/* ---------- BUTTONS ---------- */
+
+.primary-button {
+    display: inline-block;
+
+    border: none;
+    border-radius: 7px;
+
+    padding: 14px 30px;
+
+    background: #111;
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.primary-button:hover {
+    background: #333;
+    transform: translateY(-2px);
+}
+
+
+/* ---------- SECTIONS ---------- */
+
+.categories-section,
+.shop-section,
+.about-section {
+    padding: 85px 6%;
+}
+
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+
+.section-heading h2,
+.shop-header h2,
+.about-content h2 {
+    font-size: 38px;
+    letter-spacing: -1px;
+}
+
+
+/* ---------- CATEGORIES ---------- */
+
+.categories-section {
+    background: white;
+}
+
+
+.category-grid {
+    max-width: 1000px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+
+.category-card {
+    min-height: 150px;
+
+    border: 1px solid #ddd;
+    border-radius: 12px;
+
+    background: #f8f8f8;
+
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    font-size: 40px;
+
+    transition: 0.2s;
+}
+
+
+.category-card span {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+
+.category-card:hover {
+    background: #111;
+    color: white;
+
+    transform: translateY(-4px);
+}
+
+
+/* ---------- SHOP ---------- */
+
+.shop-section {
+    background: #f7f7f7;
+}
+
+
+.shop-header {
+    max-width: 1200px;
+
+    margin: 0 auto 45px;
+
+    display: flex;
+
+    align-items: end;
+    justify-content: space-between;
+
+    gap: 25px;
+}
+
+
+#search-input {
+    width: 280px;
+
+    padding: 13px 16px;
+
+    border: 1px solid #ccc;
+    border-radius: 7px;
+
+    outline: none;
+
+    background: white;
+}
+
+
+#search-input:focus {
+    border-color: #111;
+}
+
+
+/* ---------- PRODUCTS ---------- */
+
+.product-grid {
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+.product-card {
+    overflow: hidden;
+
+    border-radius: 12px;
+
+    background: white;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,0.05);
+
+    transition: 0.2s;
+
+    cursor: pointer;
+}
+
+
+.product-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.09);
+}
+
+
+.product-image {
+    height: 270px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #e9e9e9;
+
+    font-size: 100px;
+}
+
+
+.product-info {
+    padding: 22px;
+}
+
+
+.product-info h3 {
+    margin-bottom: 7px;
+
+    font-size: 20px;
+}
+
+
+.product-category {
+    margin-bottom: 12px;
+
+    color: #888;
+
+    font-size: 13px;
+}
+
+
+.product-price {
+    margin-bottom: 18px;
+
+    font-size: 18px;
+    font-weight: 700;
+}
+
+
+.add-to-cart {
+    width: 100%;
+
+    padding: 12px;
+
+    border: none;
+    border-radius: 6px;
+
+    background: #111;
+    color: white;
+
+    cursor: pointer;
+}
+
+
+.add-to-cart:hover {
+    background: #333;
+}
+
+
+/* ---------- ABOUT ---------- */
+
+.about-section {
+    background: #111;
+    color: white;
+
+    text-align: center;
+}
+
+
+.about-content {
+    max-width: 650px;
+    margin: auto;
+}
+
+
+.about-content .eyebrow {
+    color: #aaa;
+}
+
+
+.about-content h2 {
+    margin-bottom: 20px;
+}
+
+
+.about-content p:last-child {
+    color: #bbb;
+}
+
+
+/* =========================================
+   CART
+   ========================================= */
+
+.cart-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1500;
+
+    background: rgba(0,0,0,0.45);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.3s;
+}
+
+
+.cart-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.cart-sidebar {
+    position: fixed;
+
+    top: 0;
+    right: 0;
+
+    z-index: 2000;
+
+    width: min(430px, 100%);
+
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    background: white;
+
+    transform: translateX(100%);
+
+    transition: 0.3s;
+}
+
+
+.cart-sidebar.active {
+    transform: translateX(0);
+}
+
+
+.cart-header {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 22px;
+
+    border-bottom: 1px solid #ddd;
+}
+
+
+.close-cart,
+.modal-close {
+    border: none;
+
+    background: transparent;
+
+    font-size: 24px;
+
+    cursor: pointer;
+}
+
+
+.cart-items {
+    flex: 1;
+
+    overflow-y: auto;
+
+    padding: 20px;
+}
+
+
+.empty-cart {
+    padding: 50px 20px;
+
+    text-align: center;
+
+    color: #888;
+}
+
+
+.cart-item {
+    display: grid;
+
+    grid-template-columns: 1fr auto auto;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 18px 0;
+
+    border-bottom: 1px solid #eee;
+}
+
+
+.cart-item-name {
+    font-weight: 600;
+}
+
+
+.cart-item-price {
+    color: #777;
+
+    font-size: 13px;
+}
+
+
+.quantity-controls {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+.quantity-controls button {
+    width: 28px;
+    height: 28px;
+
+    border: none;
+    border-radius: 5px;
+
+    background: #111;
+    color: white;
+
+    cursor: pointer;
+}
+
+
+.remove-item {
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    font-size: 17px;
+}
+
+
+.cart-footer {
+    padding: 22px;
+
+    border-top: 1px solid #ddd;
+}
+
+
+.cart-total {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 18px;
+
+    font-size: 20px;
+}
+
+
+.checkout-button {
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+    border-radius: 7px;
+
+    background: #111;
+    color: white;
+
+    cursor: pointer;
+
+    font-weight: 600;
+}
+
+
+.checkout-button:hover {
+    background: #333;
+}
+
+
+/* =========================================
+   MODALS
+   ========================================= */
+
+.modal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 3000;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(0,0,0,0.55);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.3s;
+}
+
+
+.modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.modal-content {
+    position: relative;
+
+    width: min(500px, 100%);
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    padding: 35px;
+
+    border-radius: 12px;
+
+    background: white;
+}
+
+
+.modal-close {
+    position: absolute;
+
+    top: 15px;
+    right: 18px;
+}
+
+
+.modal-content h2 {
+    margin-bottom: 25px;
+
+    font-size: 30px;
+}
+
+
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.modal-content label {
+    margin: 13px 0 6px;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+.modal-content input,
+.modal-content select {
+    width: 100%;
+
+    padding: 13px;
+
+    border: 1px solid #ccc;
+    border-radius: 6px;
+
+    outline: none;
+}
+
+
+.modal-content input:focus,
+.modal-content select:focus {
+    border-color: #111;
+}
+
+
+.checkout-summary {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin: 25px 0;
+
+    padding: 18px 0;
+
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+
+    font-size: 18px;
+}
+
+
+.checkout-submit {
+    width: 100%;
+}
+
+
+/* ---------- SUCCESS ---------- */
+
+.success-content {
+    text-align: center;
+}
+
+
+.success-icon {
+    width: 65px;
+    height: 65px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #111;
+    color: white;
+
+    font-size: 30px;
+}
+
+
+.success-content p {
+    margin-bottom: 12px;
+
+    color: #666;
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 800px) {
+
+    .navbar {
+        flex-wrap: wrap;
+
+        gap: 15px;
+    }
+
+
+    .nav-links {
+        order: 3;
+
+        width: 100%;
+
+        justify-content: center;
+
+        gap: 18px;
+    }
+
+
+    .category-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .product-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .shop-header {
+        align-items: stretch;
+
+        flex-direction: column;
+    }
+
+
+    #search-input {
+        width: 100%;
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    .navbar {
+        padding: 15px 5%;
+    }
+
+
+    .hero {
+        min-height: 500px;
+    }
+
+
+    .hero h1 {
+        letter-spacing: -2px;
+    }
+
+
+    .categories-section,
+    .shop-section,
+    .about-section {
+        padding: 60px 5%;
+    }
+
+
+    .category-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .product-image {
+        height: 240px;
+    }
+
+
+    .cart-item {
+        grid-template-columns: 1fr auto;
+    }
+
+}
+/* =========================================
+   PRODUCT DETAILS
+   ========================================= */
+
+.product-modal-content {
+    position: relative;
+
+    width: min(850px, 100%);
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 35px;
+
+    padding: 30px;
+
+    border-radius: 14px;
+
+    background: white;
+}
+
+
+.product-modal-image {
+    min-height: 420px;
+
+    overflow: hidden;
+
+    border-radius: 10px;
+
+    background: #eee;
+}
+
+
+.product-modal-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+.product-modal-info {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+
+.product-modal-info h2 {
+    margin-bottom: 15px;
+
+    font-size: 38px;
+}
+
+
+.product-modal-price {
+    margin-bottom: 20px;
+
+    font-size: 24px;
+
+    font-weight: 700;
+}
+
+
+.product-description {
+    margin-bottom: 30px;
+
+    color: #666;
+
+    line-height: 1.7;
+}
+
+
+.modal-quantity {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 25px;
+
+    padding: 15px 0;
+
+    border-top: 1px solid #ddd;
+
+    border-bottom: 1px solid #ddd;
+}
+
+
+@media (max-width: 700px) {
+
+    .product-modal-content {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+
+        padding: 20px;
+    }
+
+
+    .product-modal-image {
+        min-height: 300px;
+    }
+
+
+    .product-modal-info h2 {
+        font-size: 30px;
+    }
+
+}
+/* =========================================================
+   SANTA SAYS HI - STEP 7 POLISH
+   Visual improvements + mobile responsiveness
+   ========================================================= */
+
+
+/* =========================================================
+   GENERAL POLISH
+   ========================================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+}
+
+button {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* =========================================================
+   PRODUCT CARDS
+   ========================================================= */
+
+.product-card {
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================================
+   PRODUCT IMAGES
+   ========================================================= */
+
+.product-image {
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.35s ease;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.05);
+}
+
+
+/* =========================================================
+   ADD TO CART BUTTON
+   ========================================================= */
+
+.add-to-cart {
+    cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.add-to-cart:hover {
+    transform: translateY(-2px);
+}
+
+.add-to-cart:active {
+    transform: scale(0.97);
+}
+
+.add-to-cart:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+}
+
+
+/* =========================================================
+   PRIMARY BUTTONS
+   ========================================================= */
+
+.primary-button,
+.checkout-button,
+.checkout-submit {
+    cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.primary-button:hover,
+.checkout-button:hover,
+.checkout-submit:hover {
+    transform: translateY(-2px);
+}
+
+.primary-button:active,
+.checkout-button:active,
+.checkout-submit:active {
+    transform: scale(0.98);
+}
+
+
+/* =========================================================
+   CART ITEMS
+   ========================================================= */
+
+.cart-item {
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.cart-item:hover {
+    background-color: rgba(0, 0, 0, 0.025);
+}
+
+
+/* =========================================================
+   QUANTITY CONTROLS
+   ========================================================= */
+
+.quantity-controls button {
+    cursor: pointer;
+    transition:
+        background-color 0.2s ease,
+        transform 0.15s ease;
+}
+
+.quantity-controls button:hover {
+    transform: scale(1.08);
+}
+
+.quantity-controls button:active {
+    transform: scale(0.94);
+}
+
+
+/* =========================================================
+   REMOVE ITEM
+   ========================================================= */
+
+.remove-item {
+    cursor: pointer;
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.remove-item:hover {
+    transform: scale(1.05);
+}
+
+
+/* =========================================================
+   MODALS
+   ========================================================= */
+
+.modal {
+    animation: modalFadeIn 0.2s ease;
+}
+
+.modal-content {
+    animation: modalSlideUp 0.25s ease;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes modalSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================================
+   SEARCH INPUT
+   ========================================================= */
+
+#search-input {
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+#search-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================================================
+   FORM INPUTS
+   ========================================================= */
+
+#checkout-form input,
+#checkout-form select,
+#checkout-form textarea {
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+#checkout-form input:focus,
+#checkout-form select:focus,
+#checkout-form textarea:focus {
+    outline: none;
+    border-color: #222;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.06);
+}
+
+
+/* =========================================================
+   STOCK STATUS
+   These styles work when the JS adds the matching classes.
+   ========================================================= */
+
+.stock-status {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.stock-status.in-stock {
+    color: #16803c;
+}
+
+.stock-status.low-stock {
+    color: #c77700;
+}
+
+.stock-status.out-of-stock {
+    color: #c62828;
+}
+
+
+/* =========================================================
+   LOADING STATE
+   ========================================================= */
+
+.loading-message {
+    width: 100%;
+    padding: 50px 20px;
+    text-align: center;
+    font-size: 1rem;
+    opacity: 0.7;
+}
+
+.loading-message::after {
+    content: "";
+    display: block;
+    width: 28px;
+    height: 28px;
+    margin: 15px auto 0;
+    border: 3px solid #ddd;
+    border-top-color: #222;
+    border-radius: 50%;
+    animation: santaSpin 0.8s linear infinite;
+}
+
+@keyframes santaSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================================================
+   ERROR STATE
+   ========================================================= */
+
+.error-message {
+    width: 100%;
+    padding: 25px;
+    text-align: center;
+    border-radius: 12px;
+    background: #fff3f3;
+    color: #b42318;
+    margin: 20px 0;
+}
+
+
+/* =========================================================
+   EMPTY SEARCH RESULT
+   ========================================================= */
+
+.no-products {
+    width: 100%;
+    padding: 50px 20px;
+    text-align: center;
+    opacity: 0.7;
+}
+
+
+/* =========================================================
+   RESPONSIVE TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    .product-image {
+        height: 230px;
+    }
+
+    .product-info {
+        padding: 16px;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    body {
+        font-size: 15px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .product-card {
+        border-radius: 12px;
+    }
+
+    .product-card:hover {
+        transform: none;
+    }
+
+    .product-image {
+        height: 170px;
+    }
+
+    .product-info {
+        padding: 12px;
+    }
+
+    .product-price {
+        font-size: 1rem;
+    }
+
+    .add-to-cart {
+        font-size: 0.85rem;
+        padding: 10px 8px;
+    }
+
+    .cart-sidebar {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .modal-content {
+        width: calc(100% - 24px);
+        max-height: 90vh;
+        overflow-y: auto;
+        margin: 12px;
+    }
+
+    .product-modal-content {
+        width: calc(100% - 24px);
+    }
+
+    .checkout-submit,
+    .checkout-button {
+        width: 100%;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .product-grid {
+        gap: 8px;
+        padding-left: 7px;
+        padding-right: 7px;
+    }
+
+    .product-image {
+        height: 145px;
+    }
+
+    .product-info {
+        padding: 9px;
+    }
+
+    .add-to-cart {
+        font-size: 0.78rem;
+        padding: 9px 5px;
+    }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid #222;
+    outline-offset: 2px;
+}
+
+/* =========================================================
+   SANTA SAYS HI - STEP 7 POLISH
+   Visual improvements + mobile responsiveness
+   ========================================================= */
+
+
+/* =========================================================
+   GENERAL POLISH
+   ========================================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+}
+
+button {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* =========================================================
+   PRODUCT CARDS
+   ========================================================= */
+
+.product-card {
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================================
+   PRODUCT IMAGES
+   ========================================================= */
+
+.product-image {
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.35s ease;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.05);
+}
+
+
+/* =========================================================
+   ADD TO CART BUTTON
+   ========================================================= */
+
+.add-to-cart {
+    cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.add-to-cart:hover {
+    transform: translateY(-2px);
+}
+
+.add-to-cart:active {
+    transform: scale(0.97);
+}
+
+.add-to-cart:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+}
+
+
+/* =========================================================
+   PRIMARY BUTTONS
+   ========================================================= */
+
+.primary-button,
+.checkout-button,
+.checkout-submit {
+    cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.primary-button:hover,
+.checkout-button:hover,
+.checkout-submit:hover {
+    transform: translateY(-2px);
+}
+
+.primary-button:active,
+.checkout-button:active,
+.checkout-submit:active {
+    transform: scale(0.98);
+}
+
+
+/* =========================================================
+   CART ITEMS
+   ========================================================= */
+
+.cart-item {
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.cart-item:hover {
+    background-color: rgba(0, 0, 0, 0.025);
+}
+
+
+/* =========================================================
+   QUANTITY CONTROLS
+   ========================================================= */
+
+.quantity-controls button {
+    cursor: pointer;
+    transition:
+        background-color 0.2s ease,
+        transform 0.15s ease;
+}
+
+.quantity-controls button:hover {
+    transform: scale(1.08);
+}
+
+.quantity-controls button:active {
+    transform: scale(0.94);
+}
+
+
+/* =========================================================
+   REMOVE ITEM
+   ========================================================= */
+
+.remove-item {
+    cursor: pointer;
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.remove-item:hover {
+    transform: scale(1.05);
+}
+
+
+/* =========================================================
+   MODALS
+   ========================================================= */
+
+.modal {
+    animation: modalFadeIn 0.2s ease;
+}
+
+.modal-content {
+    animation: modalSlideUp 0.25s ease;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes modalSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================================
+   SEARCH INPUT
+   ========================================================= */
+
+#search-input {
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+#search-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================================================
+   FORM INPUTS
+   ========================================================= */
+
+#checkout-form input,
+#checkout-form select,
+#checkout-form textarea {
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+#checkout-form input:focus,
+#checkout-form select:focus,
+#checkout-form textarea:focus {
+    outline: none;
+    border-color: #222;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.06);
+}
+
+
+/* =========================================================
+   STOCK STATUS
+   These styles work when the JS adds the matching classes.
+   ========================================================= */
+
+.stock-status {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.stock-status.in-stock {
+    color: #16803c;
+}
+
+.stock-status.low-stock {
+    color: #c77700;
+}
+
+.stock-status.out-of-stock {
+    color: #c62828;
+}
+
+
+/* =========================================================
+   LOADING STATE
+   ========================================================= */
+
+.loading-message {
+    width: 100%;
+    padding: 50px 20px;
+    text-align: center;
+    font-size: 1rem;
+    opacity: 0.7;
+}
+
+.loading-message::after {
+    content: "";
+    display: block;
+    width: 28px;
+    height: 28px;
+    margin: 15px auto 0;
+    border: 3px solid #ddd;
+    border-top-color: #222;
+    border-radius: 50%;
+    animation: santaSpin 0.8s linear infinite;
+}
+
+@keyframes santaSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================================================
+   ERROR STATE
+   ========================================================= */
+
+.error-message {
+    width: 100%;
+    padding: 25px;
+    text-align: center;
+    border-radius: 12px;
+    background: #fff3f3;
+    color: #b42318;
+    margin: 20px 0;
+}
+
+
+/* =========================================================
+   EMPTY SEARCH RESULT
+   ========================================================= */
+
+.no-products {
+    width: 100%;
+    padding: 50px 20px;
+    text-align: center;
+    opacity: 0.7;
+}
+
+
+/* =========================================================
+   RESPONSIVE TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    .product-image {
+        height: 230px;
+    }
+
+    .product-info {
+        padding: 16px;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    body {
+        font-size: 15px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .product-card {
+        border-radius: 12px;
+    }
+
+    .product-card:hover {
+        transform: none;
+    }
+
+    .product-image {
+        height: 170px;
+    }
+
+    .product-info {
+        padding: 12px;
+    }
+
+    .product-price {
+        font-size: 1rem;
+    }
+
+    .add-to-cart {
+        font-size: 0.85rem;
+        padding: 10px 8px;
+    }
+
+    .cart-sidebar {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .modal-content {
+        width: calc(100% - 24px);
+        max-height: 90vh;
+        overflow-y: auto;
+        margin: 12px;
+    }
+
+    .product-modal-content {
+        width: calc(100% - 24px);
+    }
+
+    .checkout-submit,
+    .checkout-button {
+        width: 100%;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .product-grid {
+        gap: 8px;
+        padding-left: 7px;
+        padding-right: 7px;
+    }
+
+    .product-image {
+        height: 145px;
+    }
+
+    .product-info {
+        padding: 9px;
+    }
+
+    .add-to-cart {
+        font-size: 0.78rem;
+        padding: 9px 5px;
+    }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid #222;
+    outline-offset: 2px;
+}
+
+
+/* =========================================================
+   REDUCE ANIMATIONS FOR USERS WHO PREFER IT
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
