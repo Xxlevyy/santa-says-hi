@@ -8,8 +8,8 @@
 // BACKEND
 // ============================================================
 
-const API_URL = "http://localhost:8080/api/products";
-const ORDER_API_URL = "http://localhost:8080/api/orders";
+const API_URL = "http://santa-says-hi.onrender.com/api/products";
+const ORDER_API_URL = "http://santa-says-hi.onrender.com/api/orders";
 
 // Seller WhatsApp
 const SELLER_WHATSAPP = "254719573665";
